@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="size-full text-white">
+  <div class="w-dvh h-dvh bg-[linear-gradient(to_bottom,rgba(0,0,0,0.9),rgba(0,0,0,0.5)),url('https://assets.nflxext.com/ffe/siteui/vlv3/ea534f76-b87f-4720-9605-cb29cfd9fefe/web/IN-en-20260810-TRIFECTA-perspective_5a83c581-2878-466b-87a0-19d0bf50f4bc_small.jpg')] bg-cover bg-center flex flex-col p-4 box-border ">
+  <header class="w-full h-auto">
+    <nav class="w-full h-full flex">
+      <div class="w-10px h-full p-2">
+        <img src="https://occ.a.nflxso.net/dnmt/api/v6/iL4oJVDYZ8KLSrJ6eG2OwtghbfQ/AAAAAfwxusEeCteu-L_QQ56_G2cohyI1E4BIh2uyr5t9gDhH0CKWHw3NVhndjuF7yQ26z3cYq_lnzY5pP6OarHyiibuiy2jIIa5sIhSvgal1S6u9YDVAyVoX6osPniEKN-dYy77H_pLfOCD7.svg" alt="Netflix-Logo"
+        class="w-full h-10"
+        >
+      </div>
+      <div class="w-full h-full flex justify-end gap-2 p-2">
+        <button class="py-1 px-4 bg-black/50 rounded border border-white h-min ">English</button>
+        <button class="p-1 px-4 rounded bg-red-600 hover:bg-red-800 h-min">Sign In</button>
+      </div>
+    </nav>
+  </header>
+  <main class="w-full h-full flex flex-col justify-center items-center gap-2">
+    <div class="w-full h-full flex flex-col  justify-center items-center gap-2 p-15 text-center">
+      <h1 class="text-4xl font-bold text-wrap text-center">Unlimited movies, shows, and more</h1>
+      <p class="text-xl text-wrap text-center">
+        Plans start at ₹149. Cancel anytime.
+      </p>
+      <p class="text-xl text-wrap text-center">
+        Ready to watch? Enter your email to start your membership.
+      </p>
+
+      <div 
+      class="flex gap-2">
+        <input type="email" placeholder="Email address"
+        class="rounded p-5 text-gray-300 bg-black/50 border border-red-700 outline-none"
+        id="email">
+        <button
+        class="bg-red-700 rounded p-5">
+      Try 30 Days for 0rs ></button>
+      </div>
+    </div>
+  </main>
+  <script >
+    let email = document.querySelector("#email");
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    console.log(email.value);
+    let isValid = false;
+    email.addEventListener("change", ()=>{
+      isValid = emailRegex.test(email.value);
+      if(isValid){
+        email.style.border = "1px solid green";
+        console.log("valid");
+      }else{
+        email.style.border = "1px solid red";
+        console.log("Invalid")
+      }
+    })
+
+    
+    
+  </script>
+</body>
+</html>
