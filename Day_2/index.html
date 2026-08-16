@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Todo List</title>
+</head>
+<body>
+  <div class=" w-dvw h-dvh flex flex-col justify-center items-center gap-2 bg-white">
+    <div class=" w-[70%] h-100 bg-gray-200 p-10 flex gap-3 rounded">
+      <input type="text" name="" id="input"
+      class="p-3 w-[90%] h-auto text-xl rounded outline-none" >
+      <button class="flex-1 bg-green-500 py-2 px-4 rounded text-white" 
+      id="add">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+
+    <div class="w-[70%] size-auto flex flex-col gap-1" id="todos">
+      <div class="p-2 rounded bg-green-100">
+        adknalksdnglaksg
+      </div>
+      <div class="p-2 rounded bg-green-100">
+        adknalksdnglaksg
+      </div>
+      <div class="p-2 rounded bg-green-100">
+        adknalksdnglaksg
+      </div>
+    </div>
+  </div>
+  <script>
+    console.log("Loaded")
+    let todo = null;
+    const addBtn = document.querySelector("#add");
+    addBtn.addEventListener("click", ()=>{
+      console.log("Clicked");
+      const todosDiv = document.querySelector("#todos");
+
+      todo = document.querySelector("#input").value;
+      if(todo){
+        const div = document.createElement("div");
+        div.textContent = todo;
+        div.className = "p-2 rounded bg-green-100 ";
+
+
+        todosDiv.appendChild(div);
+        console.log("added");
+      }
+
+    })
+  </script>
+</body>
+</html>
